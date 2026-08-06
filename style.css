@@ -1,4 +1,16 @@
+body {
+  background-color: rgb(13, 13, 57);
+  color: white;
+}
+
 .hero-container {
+  margin-bottom: 4rem;
   display: flex;
   gap: 10px;
 }
+
+.section-paragraph {
+  color: orange;
+  margin: 0;
+}
+
