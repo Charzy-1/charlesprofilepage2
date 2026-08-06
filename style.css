@@ -91,6 +91,10 @@ a{
   margin-bottom: 3rem;
 }
 
+.skills {
+  margin-bottom: 3rem;
+}
+
 .skill-button-container {
   display: flex;
   gap: 30px;
@@ -112,8 +116,37 @@ a{
   color: white;
 }
 
+.project-button {
+  border: none;
+}
+
+.project-container {
+  display: flex;
+  gap: 20px;
+}
+
+.project-card {  
+  padding: 10px;
+  border-radius: 20px;
+  /* Set a starting border color and width so it can animate */
+  border: 2px solid transparent; 
+  /* Combine multiple transitions into a single line separated by a comma */
+  transition: box-shadow 0.25s, border-color 0.18s;
+}
+
+.project-card:hover {
+  border-color: orange;
+  box-shadow: 10px 10px 10px rgba(172, 143, 143, 0.3);
+}
+
+.project-button-container{
+  display: flex;
+  gap: 20px;
+}
+
+
 @media (max-width: 560px) {
-  .experience-container {
+  .experience-container, .project-container {
     flex-direction: column;
   }
 
