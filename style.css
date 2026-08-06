@@ -29,7 +29,7 @@ html, body {
 }
 
 .hero-container {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   display: flex;
   gap: 10px;
   justify-content: space-between;
@@ -52,7 +52,7 @@ html, body {
 
 .experience-container{
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
 .experience-card{
@@ -66,7 +66,53 @@ html, body {
   opacity: 0.7;
 }
 
-@media (max-width: 480px) {
+.download-button{
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bolder;
+  padding: 10px;
+  cursor: pointer;
+  height: 50px;
+  width: 300px;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.download-button:hover{
+  background-color: orange;
+  color: white;
+}
+
+.experience {
+  margin-bottom: 3rem;
+}
+
+.skill-button-container {
+  display: flex;
+  gap: 30px;
+}
+
+.skill-button{
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  padding: 5px;
+  cursor: pointer;
+  height: 30px;
+  width: 100px;
+}
+
+.skill-button:hover {
+  background-color: orange;
+  color: white;
+}
+
+@media (max-width: 560px) {
   .experience-container {
     flex-direction: column;
   }
@@ -74,6 +120,4 @@ html, body {
   .hero-container {
     flex-direction: column;
   }
-
 }
-
