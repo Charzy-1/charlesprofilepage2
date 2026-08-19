@@ -127,4 +127,27 @@ p { color: var(--muted); }
   padding-block: var(--space-2);
 }
 
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.logo-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--accent-2);
+}
+
+.logo-accent { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  /* margin-inline: auto; */
+}
 
