@@ -6,7 +6,7 @@
   <title>Charzy Profile Page</title>
     <link rel="stylesheet" href="style.css">
 
-    <title>Zara Ilori — Junior Frontend Developer</title>
+    <title>Charles Adiks — Junior Frontend Developer</title>
 
     <!-- Links for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,15 +18,63 @@
 </head>
 
 <body>
+  <!-- That switche that contronls the controls dark/light theme is the line of code that follows thhis comment -->
+  <input type="checkbox" id="theme-toggle" class="a11y-toggle">
+  
   <div class="site">
 
+
+    <!-- NAVBAR SECTION -->
+    <header class="navbar-container container">
+      <div class="nav-inner">
+
+        <a href="#home">
+          <span class="logo-dot"></span>
+          Charles
+          <span class="logo-ascent">.Adiks</span>
+        </a>
+
+        <!-- Here comes the Mobile nav checkbox before the navlinks -->
+        <input type="checkbox" id="nav-toggle" class="ally-toggle" >
+
+        <label for="nav-toggle" class="hamburger" aria-label="Open menu"> 
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <!-- Navlinks can no come in  -->
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="skills">Skills</a>
+          <a href="#contacts">Contacts</a>
+        </nav>
+
+          <label for="theme-toggle" class="theme-switch" aria-label="Toggle dark mode">
+          <span class="theme-switch__track">
+
+            <!-- sun icon -->
+            <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true">
+              ☀
+            </span>
+
+            <!-- Moon icon -->
+            <span class="theme-switch__icon theme-switch__icon--moon" aria-hidden="true">
+              ☾
+            </span>
+
+            <span class="theme-switch__thumb"></span>
+
+          </span>
+        </label>
+
+      </div>
+    </header>
+
+
   </div>
-
-
-
-
-
-  
 
   
 </body>

@@ -66,3 +66,65 @@ ul { list-style: none; }
   --border: #ded9c9;
   --shadow: 220 20% 20%;  /* HSL channel triplet, used inside hsl() below */
 }
+
+.site {
+  background: var(--bg);
+  color: var(--ink);
+  transition: background-color var(--speed) var(--ease), color var(--speed) var(--ease);
+}
+
+/* Visually hidden but still focusable/operable — used for both the
+   theme checkbox and the mobile-nav checkbox. */
+.a11y-toggle {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* A custom text-selection color is a pseudo-element, not a pseudo-class —
+   ::selection styles whatever text the user highlights. */
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* A base typography and layout utilities below */
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  background: var(--bg);
+}
+
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
+
+p { color: var(--muted); }
+
+.container {
+  width: min(1120px, 100% - 3rem);
+  margin-inline: auto;
+}
+
+/* Navbar Styling */
+
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: hsl(var(--shadow) / 0.02);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+}
+
+
