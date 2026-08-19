@@ -1,177 +1,32 @@
-html, body {
-  margin: 0;
-  padding: 20px;
-  width: 100%;
-  background-color: rgb(13, 13, 57);
-  color: white;
-}
+:root {
+  /* ---- color: light mode (default) ---- */
+  --bg: #f5f3ed;
+  --surface: #ffffff;
+  --surface-2: #eeece3;
+  --ink: #1b1f1d;
+  --muted: #5b655f;
+  --accent: #3e6259;      /* pine — primary accent */
+  --accent-ink: #ffffff;  /* text color that sits on top of --accent */
+  --accent-2: #d99a2b;    /* gold — secondary accent, used sparingly */
+  --border: #ded9c9;
+  --shadow: 220 20% 20%;  /* HSL channel triplet, used inside hsl() below */
 
-/* 2. Prevent padding from adding to element width */
-* {
-  box-sizing: border-box;
-}
+  /* ---- type ---- */
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
-.connect-botton {
-  background-color: orange;
-  font-weight: bolder;
-  border: none;
-  padding: 10px;
-  width: 105px;
-  height: 36px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+  /* ---- spacing scale ---- */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
 
-.connect-botton:hover {
-  background-color: white;
-  color: orange;
-  border: 2px solid orange;
-}
-
-.hero-container {
-  margin-bottom: 3rem;
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-
-}
-
-.section-paragraph {
-  color: orange;
-  margin: 0;
-}
-
-.about-me {
-  margin-bottom: 4rem;
-}
-
-.company-date {
-  display: flex;
-  justify-content: space-between;
-}
-
-.experience-container{
-  display: flex;
-  gap: 20px;
-}
-
-.experience-card{
-  padding: 10px;
-  border: 1px solid orange;
-  border-radius: 20px;
-  transition: opacity 0.18s;
-}
-
-.experience-card:hover {
-  opacity: 0.7;
-}
-
-.download-button{
-  margin-top: 20px;
-  border: none;
-  border-radius: 10px;
-  font-weight: bolder;
-  padding: 10px;
-  cursor: pointer;
-  height: 50px;
-  width: 300px;
-}
-
-a{
-  text-decoration: none;
-  color: inherit;
-}
-
-.download-button:hover{
-  background-color: orange;
-  color: white;
-}
-
-.experience {
-  margin-bottom: 3rem;
-}
-
-.skills {
-  margin-bottom: 3rem;
-}
-
-.skill-button-container {
-  display: flex;
-  gap: 30px;
-}
-
-.skill-button{
-  margin-top: 20px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bolder;
-  padding: 5px;
-  cursor: pointer;
-  height: 30px;
-  width: 100px;
-}
-
-.skill-button:hover {
-  background-color: orange;
-  color: white;
-}
-
-.project {
-  margin-bottom: 3rem;
-}
-
-.project-button {
-  border: none;
-}
-
-.project-container {
-  display: flex;
-  gap: 20px;
-}
-
-.project-card {  
-  padding: 10px;
-  border-radius: 20px;
-  /* Set a starting border color and width so it can animate */
-  border: 2px solid transparent; 
-  /* Combine multiple transitions into a single line separated by a comma */
-  transition: box-shadow 0.25s, border-color 0.18s;
-}
-
-.project-card:hover {
-  border-color: orange;
-  box-shadow: 10px 10px 10px rgba(172, 143, 143, 0.3);
-}
-
-.project-button-container{
-  display: flex;
-  gap: 20px;
-}
-
-.contact-email {
-  color: orange;
-}
-
-.contact-button {
-  background-color: orange;
-  margin-top: 20px;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 20px;
-  font-weight: bolder;
-  padding: 5px;
-  cursor: pointer;
-  height: 50px;
-  width: 150px;
-}
-
-@media (max-width: 560px) {
-  .experience-container, .project-container {
-    flex-direction: column;
-  }
-
-  .hero-container {
-    flex-direction: column;
-  }
+  /* ---- shape / motion ---- */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --speed: 0.25s;
 }
