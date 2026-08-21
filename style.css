@@ -148,6 +148,6 @@ p { color: var(--muted); }
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  /* margin-inline: auto; */
+
 }
 
