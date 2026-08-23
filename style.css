@@ -494,6 +494,30 @@ section { padding-block: var(--space-6); }
 .project-card__links a { transition: color var(--speed) var(--ease); }
 .project-card__links a:hover { color: var(--accent); }
 
+/* SKILLS STYLYING COMES IN */
+.skill__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill__bar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.skill__fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  width: var(--fill);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  /* `forwards` holds the end state (the target --fill width) once the
+     animation finishes, instead of snapping back to 0. */
+  /* animation: grow-bar 1.4s var(--ease) forwards; */
+}
 
 
 
@@ -502,7 +526,7 @@ section { padding-block: var(--space-6); }
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero__art { order: -1; }
-  .about__grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
   .contact__grid { grid-template-columns: 1fr; }
   .card-grid--3 { grid-template-columns: repeat(2, 1fr); }
   .skills__grid { grid-template-columns: 1fr; }
