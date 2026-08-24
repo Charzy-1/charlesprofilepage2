@@ -669,7 +669,6 @@ section { padding-block: var(--space-6); }
 /* RESPONSIVENES */
 @media (max-width: 768px) {
   .nav-links { display: none; }
-  .hamburger { display: flex; }
   .hero-grid { grid-template-columns: 1fr; }
   .hero__art { order: -1; }
   .about-grid { grid-template-columns: 1fr; }
