@@ -73,6 +73,38 @@ ul { list-style: none; }
   transition: background-color var(--speed) var(--ease), color var(--speed) var(--ease);
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.hamburger span {
+  width: 22px; height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform var(--speed) var(--ease), opacity var(--speed) var(--ease);
+}
+
+/* When #nav-toggle is checked, morph the three bars into an "X".
+   :nth-child picks out the first and third bar specifically so only
+   those two rotate, while the middle one just fades out. */
+#nav-toggle:checked ~ .hamburger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+#nav-toggle:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+#nav-toggle:checked ~ .hamburger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+#nav-toggle:checked ~ .nav-links {
+  display: flex;
+}
+
 /* Visually hidden but still focusable/operable — used for both the
    theme checkbox and the mobile-nav checkbox. */
 .a11y-toggle {
@@ -81,6 +113,46 @@ ul { list-style: none; }
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+.theme-switch__track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 52px;
+  height: 28px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background-color var(--speed) var(--ease);
+}
+
+.theme-switch__icon {
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--muted);
+  z-index: 1;
+}
+
+.theme-switch__thumb {
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  /* transform (not left/top) is what's animated, so the browser can run
+     this on the compositor instead of re-running layout every frame */
+  transition: transform var(--speed) var(--ease);
+}
+
+/* The checkbox is hidden, but its :checked state still drives this
+   sibling label's child — the exact same trick that flips the whole
+   page's color theme, scoped down to just moving the little thumb. */
+#theme-toggle:checked ~ .site .theme-switch__thumb {
+  transform: translateX(24px);
 }
 
 /* A custom text-selection color is a pseudo-element, not a pseudo-class —
@@ -595,11 +667,46 @@ section { padding-block: var(--space-6); }
 
 
 /* RESPONSIVENES */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
   .hero-grid { grid-template-columns: 1fr; }
   .hero__art { order: -1; }
   .about-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .card-grid--3 { grid-template-columns: repeat(2, 1fr); }
   .skills__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .hamburger { display: flex; }
+
+  .nav-links {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    /* Collapsed by default via max-height + opacity, rather than
+       display:none, purely so the reveal can transition smoothly. */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height var(--speed) var(--ease), opacity var(--speed) var(--ease);
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 0.9em var(--space-3);
+  }
+
+  /* Same #nav-toggle:checked ~ sibling trick as the theme switch,
+     scoped to the mobile nav-links panel this time. */
+  #nav-toggle:checked ~ .nav-links {
+    max-height: 320px;
+    opacity: 1;
+  }
+
 }
